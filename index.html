@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="style-css/all.min.css">
+    <link rel="stylesheet" href="style-css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Online Shopping</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="ms-auto user-info ">
+                        <li href="#" id="user"></li>
+                    </form>
+                    <form class="d-flex links ms-auto" role="search">
+                        <div class="cart me-auto">
+                            <li id="cart-icon" onclick="toggleCart()">
+                                <i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span> <i
+                                    class="fa-solid fa-chevron-down"></i>
+                            </li>
+                            <div class="cart-products" id="cart-products" style="display: none;">
+                                <h4 class="cart-title">Your Cart</h4>
+                                <div class="cart-content" id="cart-content">
+                                    <!-- <div class="cart-box">
+                                        <img src="images/ArrowToy.jpg" alt="" class="cart-img">
+                                        <div class="details-cart">
+                                            <div class="cart-product-title">arrow toy</div>
+                                            <div class="cart-price">25$</div>
+                                            <input type="number" value="1" class="cart-quantity">
+                                        </div>
+                                        <i class="fa-solid fa-trash-can remove-item" style="color: #f91f1f;"></i>
+                                    </div>
+                                    <div class="cart-box">
+                                        <img src="images/ArrowToy.jpg" alt="" class="cart-img">
+                                        <div class="details-cart">
+                                            <div class="cart-product-title">arrow toy</div>
+                                            <div class="cart-price">25$</div>
+                                            <input type="number" value="1" class="cart-quantity">
+                                        </div>
+                                        <i class="fa-solid fa-trash-can remove-item" style="color: #f91f1f;"></i>
+
+                                    </div> -->
+                                </div>
+                                <li>Total Price: <span>100$</span></li>
+                            </div>
+                        </div>
+
+                        <a href="login.html" class="login-link" style="color: #5692f0; display: inline;">log in</a>
+                        <a class="logout-link" style="color: #d32222;  display: none;"><i
+                                class="fa-solid fa-arrow-right-from-bracket"></i> log out</a>
+
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="shop shopping-contain">
+        <div class="search-wrapper row">
+            <select id="search-kind" class="col-md-5">
+                <option value="product-name">Search by Name</option>
+                <option value="kind">Search by Category</option>
+            </select>
+            <input type="search" id="search" class="col-md-5" placeholder="search">
+        </div>
+        <div class="shop-content">
+            <!-- <div class="product-box" style="width: 20rem;">
+                <div class="product-img">
+                    <img src="images/ArrowToy.jpg" alt="">
+                </div>
+                <div class="poduct--box-desc">
+                    <h2 class="product-name">product : arrow</h2>
+                    <span class="price">price: 50$</span>
+                    <div class="kind">Category: children</div>
+                </div>
+                <div class="card-btns">
+                    <li class="add-btn">Add To Cart</li>
+                    <ul class="like-btn">
+                        <li class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></li>
+                        <li href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></li>
+                    </ul>
+                </div>
+            </div> -->
+            <!-- <div class="product-box">
+                <img src="images/istockphoto-2174771065-2048x2048.jpg" alt="" class="product-img">
+                <h2 class="product-name">product : stroller</h2>
+                <span class="price">price: 50$</span>
+                <div class="kind">Category: kids</div>
+                <div class="card-btns">
+                    <div class="btns">
+                        <a href="" class="add-btn">Add To cart</a>
+                        <a href="" class="remove-btn" style="display: none; background-color: #d32222;">remove from
+                            cart</a>
+                    </div>
+                    <div class="like-btn">
+                        <a href="" class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></a>
+                        <a href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="images/istockphoto-2174771065-2048x2048.jpg" alt="" class="product-img">
+                <h2 class="product-name">product : stroller</h2>
+                <span class="price">price: 50$</span>
+                <div class="kind">Category: kids</div>
+                <div class="card-btns">
+                    <div class="btns">
+                        <a href="" class="add-btn">Add To cart</a>
+                        <a href="" class="remove-btn" style="display: none; background-color: #d32222;">remove from
+                            cart</a>
+                    </div>
+                    <div class="like-btn">
+                        <a href="" class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></a>
+                        <a href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="images/istockphoto-2174771065-2048x2048.jpg" alt="" class="product-img">
+                <h2 class="product-name">product : stroller</h2>
+                <span class="price">price: 50$</span>
+                <div class="kind">Category: kids</div>
+                <div class="card-btns">
+                    <div class="btns">
+                        <a href="" class="add-btn">Add To cart</a>
+                        <a href="" class="remove-btn" style="display: none; background-color: #d32222;">remove from
+                            cart</a>
+                    </div>
+                    <div class="like-btn">
+                        <a href="" class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></a>
+                        <a href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="images/istockphoto-2174771065-2048x2048.jpg" alt="" class="product-img">
+                <h2 class="product-name">product : stroller</h2>
+                <span class="price">price: 50$</span>
+                <div class="kind">Category: Kids</div>
+                <div class="card-btns">
+                    <div class="btns">
+                        <a href="" class="add-btn">Add To cart</a>
+                        <a href="" class="remove-btn" style="display: none; background-color: #d32222;">remove from
+                            cart</a>
+                    </div>
+                    <div class="like-btn">
+                        <a href="" class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></a>
+                        <a href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="images/istockphoto-2174771065-2048x2048.jpg" alt="" class="product-img">
+                <h2 class="product-name">product : stroller</h2>
+                <span class="price">price: 50$</span>
+                <div class="kind">Category: Kids</div>
+                <div class="card-btns">
+                    <div class="btns">
+                        <a href="" class="add-btn">Add To cart</a>
+                        <a href="" class="remove-btn" style="display: none; background-color: #d32222;">remove from
+                            cart</a>
+                    </div>
+                    <div class="like-btn">
+                        <a href="" class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></a>
+                        <a href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="images/istockphoto-2174771065-2048x2048.jpg" alt="" class="product-img">
+                <h2 class="product-name">product : stroller</h2>
+                <span class="price">price: 50$</span>
+                <div class="kind">Category: Kids</div>
+                <div class="card-btns">
+                    <div class="btns">
+                        <a href="" class="add-btn">Add To cart</a>
+                        <a href="" class="remove-btn" style="display: none; background-color: #d32222;">remove from
+                            cart</a>
+                    </div>
+                    <div class="like-btn">
+                        <a href="" class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></a>
+                        <a href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="images/istockphoto-2174771065-2048x2048.jpg" alt="" class="product-img">
+                <h2 class="product-name">product : stroller</h2>
+                <span class="price">price: 50$</span>
+                <div class="kind">Category: Kids</div>
+                <div class="card-btns">
+                    <div class="btns">
+                        <a href="" class="add-btn">Add To cart</a>
+                        <a href="" class="remove-btn" style="display: none; background-color: #d32222;">remove from
+                            cart</a>
+                    </div>
+                    <div class="like-btn">
+                        <a href="" class="like-heart"><i class="fa-solid fa-heart" style="color: #acacac;"></i></a>
+                        <a href="" class="liked-heart" style="display: none;"><i class="fa-solid fa-heart"
+                                style="color: #d32222;"></i></a>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="java-script/js.js"></script>
+    <script src="java-script/login.js"></script>
+
+</body>
+
+</html>
